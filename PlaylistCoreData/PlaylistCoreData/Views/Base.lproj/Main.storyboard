@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Playlists-->
         <scene sceneID="a4s-DQ-Dzc">
             <objects>
-                <tableViewController id="SvL-OO-AqP" sceneMemberID="viewController">
+                <tableViewController id="SvL-OO-AqP" customClass="PlaylistTableViewController" customModule="PlaylistCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="f16-Jk-u20">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,9 +70,16 @@
                             <outlet property="delegate" destination="SvL-OO-AqP" id="CaP-zX-tPk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="qNA-wV-lHw">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nvT-xo-vi9"/>
+                    <navigationItem key="navigationItem" title="Playlists" id="qNA-wV-lHw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nvT-xo-vi9">
+                            <connections>
+                                <action selector="addPlaylistButtonTapped:" destination="SvL-OO-AqP" id="r6e-2a-Ky8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="playlistNameTextField" destination="iDN-S1-eAh" id="qzS-lB-EPL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FUn-JM-7Ak" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,7 +88,7 @@
         <!--Title-->
         <scene sceneID="esQ-l3-i0t">
             <objects>
-                <tableViewController id="EJl-o3-MwF" sceneMemberID="viewController">
+                <tableViewController id="EJl-o3-MwF" customClass="SongTableViewController" customModule="PlaylistCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kld-nQ-Pyd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -121,7 +128,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="songCell" textLabel="3ve-0F-fXF" detailTextLabel="oC5-kP-BMI" style="IBUITableViewCellStyleSubtitle" id="7TH-Uo-3WT">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="songCell" textLabel="3ve-0F-fXF" detailTextLabel="oC5-kP-BMI" style="IBUITableViewCellStyleSubtitle" id="7TH-Uo-3WT">
                                 <rect key="frame" x="0.0" y="112" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7TH-Uo-3WT" id="SE9-M8-E7x">
@@ -152,8 +159,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="9Zn-eZ-I0r">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QuQ-qu-gcu"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QuQ-qu-gcu">
+                            <connections>
+                                <action selector="addNewSongButtonTapped:" destination="EJl-o3-MwF" id="M58-ny-zfv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="artistNameTextField" destination="ZfX-1q-Jhq" id="plb-hH-Sxu"/>
+                        <outlet property="songNameTextField" destination="zIb-MR-6pU" id="3XV-sz-CUk"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5s7-wS-Yds" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
