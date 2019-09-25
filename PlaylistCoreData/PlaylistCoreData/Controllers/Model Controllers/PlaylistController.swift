@@ -7,19 +7,31 @@
 //
 
 import Foundation
+import CoreData
 
 class PlaylistController {
     
-    // CRUD
+    // Singleton
+    static let sharedInstance = PlaylistController()
+    
+    // Local Source of Truth
+    var playlists: [Playlist] {
+            let fetchRequest: NSFetchRequest<Playlist> = Playlist.fetchRequest()
+            return (try? CoreDataStack.context.fetch(fetchRequest)) ?? []
+        }
+    
+    // MARK: - CRUD
+    
     // CREATE
     func createdPlaylist(withName name: String) {
-        let playnasty = Playlist(playlist: name)
-        
+        _ = Playlist(playlistName: name)
+        saveToPersistentStore()
     }
     
     // DELETE
     func deletePlaylist(playlist: Playlist) {
-        
+        CoreDataStack.context.delete(playlist)
+        saveToPersistentStore()
     }
     
     // SAVE

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3518C668233BDF850097181A /* PlaylistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3518C667233BDF850097181A /* PlaylistController.swift */; };
+		3518C66A233BE6730097181A /* SongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3518C669233BE6730097181A /* SongController.swift */; };
 		35BC8185233BCF2F00F2BBBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BC8184233BCF2F00F2BBBB /* AppDelegate.swift */; };
 		35BC818A233BCF3000F2BBBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35BC8188233BCF3000F2BBBB /* Main.storyboard */; };
 		35BC818D233BCF3000F2BBBB /* PlaylistCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 35BC818B233BCF3000F2BBBB /* PlaylistCoreData.xcdatamodeld */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		3518C667233BDF850097181A /* PlaylistController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistController.swift; sourceTree = "<group>"; };
+		3518C669233BE6730097181A /* SongController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongController.swift; sourceTree = "<group>"; };
 		35BC8181233BCF2F00F2BBBB /* PlaylistCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaylistCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35BC8184233BCF2F00F2BBBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35BC8189233BCF3000F2BBBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				3518C667233BDF850097181A /* PlaylistController.swift */,
+				3518C669233BE6730097181A /* SongController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3518C66A233BE6730097181A /* SongController.swift in Sources */,
 				35BC81A6233BD88000F2BBBB /* CoreDataStack.swift in Sources */,
 				3518C668233BDF850097181A /* PlaylistController.swift in Sources */,
 				35BC8185233BCF2F00F2BBBB /* AppDelegate.swift in Sources */,
